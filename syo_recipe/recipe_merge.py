@@ -24,7 +24,7 @@ resp = r.json()
 print ('-'*40)
  
 recipe_keys = [1,2,3,4]
-recipe_values = [{"recipe":[{"URL":[recipe["recipeUrl"]]},{"title":[recipe["recipeTitle"]]},{"image":recipe["foodImageUrl"]},{"indication":recipe["recipeIndication"]},{"cost":recipe["recipeCost"]}]} for recipe in resp['result']]
+recipe_values = [[recipe["recipeUrl"],recipe["recipeTitle"],recipe["foodImageUrl"],recipe["recipeMaterial"],recipe["recipeIndication"],recipe["recipeCost"]] for recipe in resp['result']]
 dic = dict(zip(recipe_keys,recipe_values))
 pprint(dic)
 
