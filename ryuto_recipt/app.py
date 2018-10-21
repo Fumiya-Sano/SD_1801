@@ -106,7 +106,6 @@ def base64_to_food(image_base64):
     x_gran = 10
     y_gran = 15
 
-    # 文字認識させたい画像をtest.pngとする
     result = request_cloud_vison_api(image_base64)
     food_dic = {}
     try:
@@ -123,7 +122,7 @@ def index():
     return "こんにちは"
 
 
-@app.route('/post', methods=['POST']) #Methodを明示する必要あり
+@app.route('/post', methods=['POST'])
 def post():
     if request.method == 'POST':
         try:
